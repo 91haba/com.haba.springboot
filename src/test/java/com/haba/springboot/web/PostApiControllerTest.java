@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-//import javax.xml.ws.Response;
+import javax.xml.ws.Response;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -42,10 +42,11 @@ public class PostApiControllerTest {
         //given
         String title = "title";
         String content = "content";
+        String author = "author";
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
                                                             .title(title)
                                                             .content(content)
-                                                            .author("author")
+                                                            .author(author)
                                                             .build();
         String url = "http://localhost: " + port + "/api/v1/posts";
 
