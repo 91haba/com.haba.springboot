@@ -14,7 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.xml.ws.Response;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -48,7 +47,7 @@ public class PostApiControllerTest {
                                                             .content(content)
                                                             .author(author)
                                                             .build();
-        String url = "http://localhost: " + port + "/api/v1/posts";
+        String url = "http://localhost:" + port + "/api/v1/posts";
 
         //when
         ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
