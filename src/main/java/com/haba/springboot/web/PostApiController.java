@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-
 public class PostApiController {
 
     private final PostsService postsService;
