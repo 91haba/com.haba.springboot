@@ -40,8 +40,17 @@ public class PostsService {
 
     @Transactional(readOnly = true)
     public List<PostsListResponseDto> findAllDesc() {
+        // 람다 표현식 알아두기
         return postsRepository.findAllDesc().stream()
                     .map(PostsListResponseDto::new)
                     .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id = " + id));
+
+            postsRepository.delete(posts);
     }
 }
